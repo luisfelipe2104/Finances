@@ -1,0 +1,33 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Commands
+// npm init -y
+// yarn add prisma typescript ts-node @types/node --save-dev
+// npx prisma init
+// npx prisma migrate dev --name youtube_channels_table
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model Users {
+  id       Int        @id @default(autoincrement())
+  email    String     @db.VarChar(255)
+  password String     @db.VarChar(255)
+  Finances Finances[]
+}
+
+model Finances {
+  id          Int     @id @default(autoincrement())
+  profit      Boolean @db.TinyInt
+  description String  @db.VarChar(255)
+  value       Int     @db.Int
+  user_id     Int     @db.Int
+  user        Users    @relation(fields: [user_id], references: [id])
+}
