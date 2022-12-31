@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Container, Text, ContainerForms, Button, ContainerInput } from "../index.js";
+import { Container, Text, ContainerForms, Button as ButtonBase, ContainerInput } from "../index.js";
 
 export const Title = styled(Text)`
     font-family: 'cursive';
@@ -14,7 +14,7 @@ export const ContainerButtons = styled(ContainerInput)`
     gap: 20px;
 `
 
-export const ButtonLogin = styled(Button)`
+export const Button = styled(ButtonBase)`
     padding: 10px 15px;
     font-size: 20px;
     color: white;
@@ -23,4 +23,4 @@ export const ButtonLogin = styled(Button)`
     border-radius: 25px;
 `
 
-export { Container, ContainerForms, Button } 
+export { Container, ContainerForms } 

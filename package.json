@@ -13,6 +13,7 @@
     "@prisma/client": "^4.8.0",
     "axios": "^1.2.2",
     "babel-plugin-styled-components": "^2.0.7",
+    "bootstrap": "^5.2.3",
     "next": "13.1.1",
     "prisma": "^4.8.0",
     "react": "18.2.0",

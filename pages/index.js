@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Register from '../components/Register/Register'
 import Login from '../components/Login/Login'
 import Home from '../components/Home/Home'
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Finances from '../components/Finances/Finances'
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -19,7 +19,7 @@ export default function Main() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       
-      <Home />
+      <Finances />
     </>
   )
 }
