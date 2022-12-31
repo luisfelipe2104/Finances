@@ -1,4 +1,49 @@
 // Register components
-import { Container, Text, ContainerForms, ContainerInput, Input, Button, ContainerButton, Error } from "./Register/styles.js"
+import { Container as ContainerBase, 
+    Text as TextBase, 
+    ContainerForms, 
+    ContainerInput, 
+    InputBase, 
+    Button, 
+    ContainerButton, 
+    Error 
+} from "./Register/styles.js"
 
-export { Container, Text, ContainerForms, ContainerInput, Input, Button, ContainerButton, Error }
+import { 
+    Container, 
+    Header, 
+    Title, 
+    Section, 
+    ContainerCards, 
+    Card, 
+    Text, 
+    Price, 
+    ContainerInputs,
+    Input,
+    Radio,
+    Label
+} from './Finances/styles.js'
+
+export { 
+    ContainerBase, 
+    TextBase, 
+    ContainerForms, 
+    ContainerInput, 
+    InputBase, 
+    Button, 
+    ContainerButton, 
+    Error,
+
+    Container, 
+    Header, 
+    Title, 
+    Section, 
+    ContainerCards, 
+    Card, 
+    Text, 
+    Price, 
+    ContainerInputs,
+    Input,
+    Radio,
+    Label
+}

@@ -10,7 +10,7 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-        await axios.post("http://localhost:3001/api/user/login", {email: username, password: password})
+        await axios.post("http://localhost:3000/api/user/login", {email: username, password: password})
         .then((res) => console.log(res))
         console.log(username, password)
     } catch (err) {

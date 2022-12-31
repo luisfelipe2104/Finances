@@ -10,7 +10,7 @@ export default function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
-      await axios.post("http://localhost:3001/api/user/create", {email: username, password: password})
+      await axios.post("http://localhost:3000/api/user/create", {email: username, password: password})
       .then(res => console.log(res))
     } catch (err) {
       const error = err.response.data.msg

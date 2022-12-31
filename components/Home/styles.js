@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { Container, Text, ContainerForms, Button as ButtonBase, ContainerInput } from "../index.js";
+import { ContainerBase as Container, TextBase, ContainerForms, Button as ButtonBase, ContainerInput } from "../index.js";
 
-export const Title = styled(Text)`
+export const Title = styled(TextBase)`
     font-family: 'cursive';
     font-weight: bold;
     font-size: 1.8em;
