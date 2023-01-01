@@ -8,6 +8,7 @@ export const Container = styled(ContainerBase)
     flex-direction: column;
     min-height: 100vh;
     height: fit-content;
+    background-color: #2e2e2e;
 `
 
 export const Header = styled.div `
@@ -45,6 +46,25 @@ export const Card = styled.div `
     align-items: center;
     border-radius: 10px;
     padding-top: 10px;
+`
+
+export const Table = styled(Card)
+`
+    flex-direction: row;
+    gap: 20px;
+    height: fit-content;
+    padding: 20px 20px;
+`
+
+export const TableHeader = styled.div `
+
+`
+
+export const TableRow = styled.tr `
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
 `
 
 export const ContainerInputs = styled.form `
