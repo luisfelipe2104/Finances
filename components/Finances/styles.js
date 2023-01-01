@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { ContainerBase } from "../index.js";
 
-export const Container = styled(ContainerBase)
-`
+export const Container = styled(ContainerBase) `
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
@@ -48,23 +47,18 @@ export const Card = styled.div `
     padding-top: 10px;
 `
 
-export const Table = styled(Card)
-`
+export const Table = styled(Card)`
     flex-direction: row;
     gap: 20px;
     height: fit-content;
     padding: 20px 20px;
 `
 
-export const TableHeader = styled.div `
-
-`
-
 export const TableRow = styled.tr `
     width: 100%;
     display: flex;
     justify-content: space-between;
-    border: 1px solid black;
+    margin-top: 12px;
 `
 
 export const ContainerInputs = styled.form `
@@ -102,14 +96,12 @@ export const Text = styled.p `
     font-weight: 500;
 `
 
-export const Label = styled(Text)
-`
+export const Label = styled(Text)`
     margin-bottom: -6px;
     font-size: 0.5em;
     font-weight: 400;
 `
 
-export const Price = styled(Text)
-`
+export const Price = styled(Text)`
     font-weight: 800;
 `

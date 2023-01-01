@@ -1,11 +1,11 @@
-import Head from 'next/head'
-import Image from 'next/image'
+import Head from "next/head";
+import Image from "next/image";
 // import { Inter } from '@next/font/google'
 // import styles from '../styles/Home.module.css'
-import Register from '../components/Register/Register'
-import Login from '../components/Login/Login'
-import Home from '../components/Home/Home'
-import Finances from '../components/Finances/Finances'
+import Register from "../components/Register/Register";
+import Login from "../components/Login/Login";
+import Home from "../components/Home/Home";
+import Finances from "../components/Finances/Finances";
 
 // const inter = Inter({ subsets: ['latin'] })
 
@@ -18,8 +18,8 @@ export default function Main() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      
+
       <Finances />
     </>
-  )
+  );
 }
