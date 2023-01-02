@@ -9,6 +9,8 @@ export const Container = styled.div `
     display: flex;
     justify-content: center;
     align-items: center;
+    max-width: 100vw;
+    overflow-x: hidden;
 `
 
 export const ContainerForms = styled.div `

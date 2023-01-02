@@ -1,11 +1,19 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import entrie from "../../assets/entrie-light.png";
-import loss from "../../assets/output-light.png";
+import output from "../../assets/output-light.png";
 import cash from "../../assets/dollar-light.png";
 import { ContainerCards, Card, Text, Price } from "../index.js";
 
-export default function Cards() {
+export default function Cards(props) {
+  // console.log(props.data)
+  const data = props.data
+
+  const [teste, setTeste] = useState(true)
+  
+  
+  
+
   return (
     <ContainerCards>
       <div className="row">
@@ -20,16 +28,16 @@ export default function Cards() {
                     style={{ height: "25px", width: "25px" }}
                   />
                 </div>
-                <Price>R$ 2000.00</Price>
+                <Price>R$ {props.gain}.00</Price>
               </Card>
             </div>
             <div className="col-6">
               <Card>
                 <div style={{ display: "flex", gap: "20px" }}>
                   <Text>Loss</Text>
-                  <Image src={loss} style={{ height: "25px", width: "25px" }} />
+                  <Image src={output} style={{ height: "25px", width: "25px" }} />
                 </div>
-                <Price>R$ 200000.00</Price>
+                <Price>R$ {props.loss}.00</Price>
               </Card>
             </div>
           </div>
@@ -40,7 +48,7 @@ export default function Cards() {
               <Text>Cash</Text>
               <Image src={cash} style={{ height: "25px", width: "25px" }} />
             </div>
-            <Price>R$ 2000.00</Price>
+            <Price>R$ {props.cash}.00</Price>
           </Card>
         </div>
       </div>

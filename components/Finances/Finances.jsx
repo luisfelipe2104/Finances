@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import trash from "../../assets/trash-light.png";
 import entrie from "../../assets/entrie.png";
@@ -14,36 +14,45 @@ import {
 } from "./styles";
 import Cards from "../Cards/Cards";
 import Inputs from "../Inputs/Inputs";
+import axios from "axios";
 
 export default function Finances() {
-  const data = [
-    {
-      id: 1,
-      description: "Alimentaçãooooooooooooooooooooooooooooooooo",
-      value: 2000,
-      profit: true,
-    },
-    {
-      id: 2,
-      description: "Cinema",
-      value: 800,
-      profit: false,
-    },
-    {
-      id: 3,
-      description: "Imposto",
-      value: 1500,
-      profit: true,
-    },
-  ];
+  let url = 'https://finances-xi.vercel.app'
+  // url = 'http://localhost:3000'
+  const [gain, setGain] = useState(0)
+  const [loss, setLoss] = useState(0)
+  const [cash, setCash] = useState(0)
+  const [data, setData] = useState([])
+  const [loaded, setLoaded] = useState(false)
+  const getData = async () => {
+    await axios.post(url + '/api/user/getFinance', {user_id: 2})
+    .then(res => {
+      setData(res.data.data)
+      setGain(res.data.gain)
+      setLoss(res.data.loss)
+      setCash(res.data.cash)
+      setLoaded(true)
+    })
+  }  
+
+  const handleDelete = async (id) => {
+    await axios.post(url + '/api/user/deleteFinance', {"id": parseInt(id)})
+    await getData()
+  }
+
+  useEffect(() => {
+    getData()
+  }, [])
+
+  {!loaded && <Text>Loading...</Text>}
   return (
     <Container>
       <Header>
         <Title>Finances Manager</Title>
       </Header>
       <Section>
-        <Cards />
-        <Inputs />
+        <Cards gain={gain} loss={loss} cash={cash} loaded={loaded} />
+        <Inputs getData={getData} />
         <Table>
           <table style={{ width: "100%" }}>
             <thead style={{ borderBottom: "1px solid #fff" }}>
@@ -71,7 +80,7 @@ export default function Finances() {
                     </td>
                     <td style={{ width: "50px", display: "flex", gap: "3px" }}>
                       <Image
-                        src={entrie}
+                        src={item.profit ? entrie : output}
                         style={{
                           marginLeft: "-20%",
                           marginRight: "30%",
@@ -80,8 +89,10 @@ export default function Finances() {
                         }}
                       />
                       <Image
+                        onClick={() => handleDelete(item.id)}
                         src={trash}
                         style={{
+                          cursor: 'pointer',
                           height: "32px",
                           width: "32px",
                           marginTop: "-5px",

@@ -10,6 +10,10 @@ export default async function createUser(req, res) {
     }
     catch(err) {
         res.status(404).json({ msg: "User already exists" })
-    }
+    } finally {
+        async () => {
+          await prisma.$disconnect();
+        };
+      }
 
 }
