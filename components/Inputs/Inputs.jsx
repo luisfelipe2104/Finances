@@ -3,6 +3,8 @@ import { Text, ContainerInputs, Input, Radio, Label } from "../index.js";
 import axios from "axios";
 
 export default function Inputs(props) {
+  let url = 'https://finances-xi.vercel.app'
+  // url = 'http://localhost:3000'
   const [value, setValue] = useState(0)
   const [description, setDescription] = useState("")
   const [profit, setProfit] = useState(true)
@@ -18,7 +20,7 @@ export default function Inputs(props) {
     }
 
     console.log(data)
-    await axios.post('http://localhost:3000/api/user/createFinance', data)
+    await axios.post(url + '/api/user/createFinance', data)
     .then(res => console.log(res))
     await props.getData()
   }
