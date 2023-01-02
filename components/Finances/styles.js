@@ -59,6 +59,7 @@ export const TableRow = styled.tr `
     display: flex;
     justify-content: space-between;
     margin-top: 12px;
+    align-items: center;
 `
 
 export const ContainerInputs = styled.form `
